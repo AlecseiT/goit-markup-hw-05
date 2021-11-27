@@ -86,6 +86,9 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   position: relative;
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -135,6 +138,10 @@ body {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-second-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-contacts:hover,
 .header-contacts:focus {
@@ -187,6 +194,10 @@ body {
   background-color: var(--navigation-btn-color);
   border-radius: 4px;
   border: none;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-pointer {
   cursor: pointer;
@@ -323,10 +334,18 @@ body {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-networks-icon {
   fill: var(--icons-main-color);
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-networks-link:hover,
@@ -393,6 +412,10 @@ body {
   justify-content: center;
   border: 1px solid #afb1b8;
   border-radius: 4px;
+
+  transition-property: border-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .regular-cliet-link:hover,
@@ -414,6 +437,11 @@ body {
 }
 .regular-clien-item + .regular-clien-item {
   margin-left: 30px;
+}
+.regular-clients-icon {
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .regular-clients-icon {
@@ -448,11 +476,15 @@ body {
   border-radius: 4px;
   cursor: pointer;
   border: transparent;
+
+  transition-property: background-color, color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-btn:hover,
 .filter-btn:focus {
   color: var(--secondary-color);
-  background: var(--navigation-btn-color);
+  background-color: var(--navigation-btn-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -492,6 +524,10 @@ body {
   width: 370px;
   margin-right: 30px;
   margin-bottom: 30px;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-item:hover,
 .portfolio-item:focus {
@@ -568,6 +604,10 @@ body {
   line-height: 1.71;
   letter-spacing: 0.03em;
   color: var(--footer-contact-color);
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .link-contacts:hover,
 .link-contacts:focus {
@@ -612,6 +652,10 @@ body {
   justify-content: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-icon {
   fill: var(--secondary-color);
@@ -620,4 +664,57 @@ body {
 .footer-link-icons:hover,
 .footer-link-icons:focus {
   background-color: var(--navigation-btn-color);
+}
+
+/* ----------------Modal------------------ */
+.backdrope {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  width: 528px;
+  min-height: 581px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(1) translate(-50%, -50%) rotate(0);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.backdrope.is-hidden .modal {
+  transform: scale(0.5) translate(-50%, -50%) rotate(30deg);
+}
+
+.modal-close-btn {
+  width: 30px;
+  height: 30px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
