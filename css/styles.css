@@ -117,18 +117,30 @@ body {
   margin-left: 50px;
 }
 
-.header-icons {
-  fill: var(--main-second-color);
-  margin-right: 10px;
-}
-.header-icons:hover,
-.header-icons:focus {
+.header-contacts:hover .header-icons,
+.header-contacts:focus .header-icons {
   fill: var(--navigation-btn-color);
+  fill: currentColor;
 }
 
 .header-icons {
-  fill: currentColor;
+  fill: var(--main-second-color);
+  margin-right: 10px;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+/* .header-icons:hover,
+.header-icons:focus {
+  fill: var(--navigation-btn-color);
+} */
+
+/* .header-icons {
+  fill: currentColor;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+} */
 .header-contacts {
   display: flex;
   align-items: center;
